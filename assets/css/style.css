@@ -60,6 +60,59 @@ a {
 
 /* ---##-- REUSABLE CSS --##--- */
 
+/* ---- SCROLL TO TOP ----- */
+
+.scroll-hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 5vh;
+    right: 2vw;
+    width: 60px;
+    height: 60px;
+    background-color: var(--second-color);
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 10px 1px var(--second-color);
+    animation: fadeIn .5s ease-in;
+    -webkit-animation: fadeIn .3s ease-in;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.scroll-to-top.hidden {
+    opacity: 0;
+}
+
+.scroll-to-top:hover {
+    cursor: pointer;
+}
+
+.scroll-to-top i {
+    color: #e6f6f8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn {
     font-weight: 500;
@@ -318,8 +371,35 @@ nav {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
 }
 
-.scroll-btn i {
+.scroll-btn i,
+.scroll-btn-about i,
+.scroll-btn-projects i,
+.scroll-btn-footer i {
     font-size: 20px;
+}
+
+.scroll-btn-about,
+.scroll-btn-projects,
+.scroll-btn-footer {
+    position: relative;
+    top: 20vh;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 50px;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--text-color-second);
+    background: var(--color-white);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.scroll-btn-footer {
+    top: 5vh;
 }
 
 /* ----- MAIN BOX ----- */

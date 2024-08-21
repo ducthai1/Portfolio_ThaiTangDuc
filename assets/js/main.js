@@ -30,7 +30,7 @@ function headerShadow() {
 
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
-  strings: ["Frontend Developer", "UITER", "Developer"],
+  strings: ["Frontend Developer", "UITER"],
   loop: true,
   typeSpeed: 100,
   backSpeed: 80,
@@ -58,6 +58,11 @@ sr.reveal(".project-box", { interval: 200 });
 
 /* -- HEADINGS -- */
 sr.reveal(".top-header", {});
+
+/* -- SCROLL BTN --*/
+sr.reveal(".scroll-btn", { interval: 200 });
+sr.reveal(".scroll-btn-about", { interval: 200 });
+sr.reveal(".scroll-btn-projects", { interval: 200 });
 
 /* ----- ## -- SCROLL REVEAL LEFT_RIGHT ANIMATION -- ## ----- */
 
@@ -108,3 +113,14 @@ function scrollActive() {
 }
 
 window.addEventListener("scroll", scrollActive);
+
+document.addEventListener("scroll", function () {
+  const scrollBtn = document.querySelector(".scroll-hidden");
+  if (window.scrollY >= 500) {
+    scrollBtn.classList.remove("hidden");
+    scrollBtn.classList.add("scroll-to-top");
+  } else {
+    scrollBtn.classList.add("hidden");
+    scrollBtn.classList.remove("scroll-to-top");
+  }
+});
