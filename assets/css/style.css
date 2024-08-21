@@ -533,8 +533,20 @@ h3 {
     color: #777;
 }
 
+.scroll-btn,
+.scroll-btn-about,
+.scroll-btn-projects,
+.scroll-btn-footer {
+    overflow: hidden;
+}
+
 .project-box::after,
-.contact-info::after {
+.contact-info::after,
+.scroll-btn::before,
+.scroll-btn-about::before,
+.scroll-btn-projects::before,
+.scroll-btn-footer::before,
+.scroll-btn-about::before {
     content: "";
     position: absolute;
     bottom: -100%;
@@ -545,15 +557,34 @@ h3 {
     z-index: 1;
 }
 
+.scroll-btn:hover i,
+.scroll-btn:hover p,
+.scroll-btn-about:hover i,
+.scroll-btn-about:hover p,
+.scroll-btn-projects:hover i,
+.scroll-btn-projects:hover p,
+.scroll-btn-footer:hover i,
+.scroll-btn-footer:hover p {
+    color: var(--color-white);
+    z-index: 2;
+}
+
 .project-box:hover {
     cursor: not-allowed;
 }
 
 .project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after {
+.contact-info:hover.contact-info::after,
+.scroll-btn:hover.scroll-btn::before,
+.scroll-btn-about:hover.scroll-btn-about::before,
+.scroll-btn-projects:hover.scroll-btn-projects::before,
+.scroll-btn-footer:hover.scroll-btn-footer::before {
     bottom: 0;
-    cursor: not-allowed;
+}
 
+.project-box:hover.project-box::after,
+.contact-info:hover.contact-info::after {
+    cursor: not-allowed;
 }
 
 .project-box:hover.project-box i,
