@@ -64,8 +64,6 @@ a {
 
 .scroll-hidden {
     display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
 
 .scroll-to-top {
@@ -87,6 +85,7 @@ a {
     animation: fadeIn .5s ease-in;
     -webkit-animation: fadeIn .3s ease-in;
     opacity: 1;
+    z-index: 2;
 }
 
 @keyframes fadeIn {
@@ -97,10 +96,6 @@ a {
     to {
         opacity: 1;
     }
-}
-
-.scroll-to-top.hidden {
-    opacity: 0;
 }
 
 .scroll-to-top:hover {
